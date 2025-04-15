@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" version="1.1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.05"/>
+   <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0.1"/>
+  </linearGradient>
+  
+  <!-- Medical Cross -->
+  <symbol id="medical-cross" viewBox="0 0 100 100">
+    <path d="M40,20 h20 v20 h20 v20 h-20 v20 h-20 v-20 h-20 v-20 h20 z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- Heart Rate -->
+  <symbol id="heart-rate" viewBox="0 0 100 40">
+    <path d="M0,20 L20,20 L25,10 L30,30 L35,10 L40,30 L45,20 L100,20" 
+          fill="none" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+  
+  <!-- DNA Helix -->
+  <symbol id="dna" viewBox="0 0 40 100">
+    <path d="M20,0 C40,25 0,75 20,100 M20,0 C0,25 40,75 20,100" 
+          fill="none" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+  
+  <!-- Caduceus -->
+  <symbol id="caduceus" viewBox="0 0 60 100">
+    <path d="M30,0 v100 M20,20 c-20,20 20,40 0,60 M40,20 c20,20 -20,40 0,60" 
+          fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="30" cy="15" r="8" fill="currentColor"/>
+  </symbol>
+ </defs>
+ 
+ <!-- Background -->
+ <rect width="100%" height="100%" fill="url(#grad1)"/>
+ 
+ <!-- Pattern -->
+ <g style="color:#3b82f6;opacity:0.1">
+   <!-- Row 1 -->
+   <use href="#medical-cross" x="0" y="0" width="100" height="100"/>
+   <use href="#heart-rate" x="100" y="30" width="200" height="40"/>
+   <use href="#medical-cross" x="300" y="0" width="100" height="100"/>
+   
+   <!-- Row 2 -->
+   <use href="#dna" x="30" y="100" width="40" height="100"/>
+   <use href="#caduceus" x="170" y="100" width="60" height="100"/>
+   <use href="#dna" x="330" y="100" width="40" height="100"/>
+   
+   <!-- Row 3 -->
+   <use href="#medical-cross" x="0" y="200" width="100" height="100"/>
+   <use href="#heart-rate" x="100" y="230" width="200" height="40"/>
+   <use href="#medical-cross" x="300" y="200" width="100" height="100"/>
+   
+   <!-- Row 4 -->
+   <use href="#dna" x="30" y="300" width="40" height="100"/>
+   <use href="#caduceus" x="170" y="300" width="60" height="100"/>
+   <use href="#dna" x="330" y="300" width="40" height="100"/>
+ </g>
+</svg>
