@@ -83,7 +83,3 @@ npm start
 - This application is for first aid guidance only
 - Always call emergency services for serious situations
 - The AI provides general first aid information, not medical diagnosis
-
-## License
-
-MIT License
