@@ -1,3 +1,7 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 interface MessageBubbleProps {
   role: 'user' | 'assistant';
   content: string;
@@ -5,6 +9,15 @@ interface MessageBubbleProps {
 }
 
 export const MessageBubble = ({ role, content, timestamp }: MessageBubbleProps) => {
+  const [formattedTime, setFormattedTime] = useState<string | null>(null);
+
+  // Only format time on the client to avoid server/client hydration mismatch
+  useEffect(() => {
+    if (timestamp) {
+      setFormattedTime(timestamp.toLocaleTimeString());
+    }
+  }, [timestamp]);
+
   return (
     <div className={`flex items-start max-w-[80%] gap-4 ${
       role === 'user' ? 'message-out' : 'message-in'
@@ -29,14 +42,14 @@ export const MessageBubble = ({ role, content, timestamp }: MessageBubbleProps) 
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative">
           <div className="whitespace-pre-wrap">{content}</div>
-          {timestamp && (
+          {formattedTime && (
             <div className={`text-xs mt-2 flex items-center gap-1 ${
               role === 'user' ? 'text-blue-100' : 'text-gray-500'
             }`}>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              {timestamp.toLocaleTimeString()}
+              {formattedTime}
             </div>
           )}
         </div>
